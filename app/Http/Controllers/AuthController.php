@@ -31,7 +31,8 @@ class AuthController extends Controller
             'password' => bcrypt($request->input('password')),
         ]);
 
-        return redirect()->route('home')->with('info','You are ready to go');
+        notify()->flash('You are ready to go','success');
+        return redirect()->route('home');
     }
 
     public function getSignin(){
@@ -45,10 +46,12 @@ class AuthController extends Controller
         ]);
 
         if(!Auth::attempt($request->only(['email','password'],$request->has('remember')))){
-            return redirect()->back()->with('info','Could not sign you in with those information');
+            notify()->flash('Could not sign you in with those information','warning');
+            return redirect()->back();
         }
 
-        return redirect()->route('home')->with('info','You are in FriendZone');
+        notify()->flash('You are in FriendZone','success');
+        return redirect()->route('home');
 
     }
 

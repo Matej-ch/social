@@ -28,20 +28,23 @@ class FriendController extends Controller
         $user = User::where('username',$username)->first();
 
         if(!$user){
+            notify()->flash('User could not be found','warning',['timer'=> 2000]);
             return redirect()
-                ->route('home')
-                ->with('info','User could not be found');
+                ->route('home');
         }
 
         if(Auth::user()->hasFriendRequestPending($user) || $user->hasFriendRequestPending(Auth::user())){
+
             return redirect()->route('profile.index',['username'=> $user->username])->with('info','Pending...');
         }
 
         if(Auth::user()->isFriendsWith($user)){
-            return redirect()->route('profile.index',['username'=> $user->username])->with('info','You already friendzoned this person');
+            notify()->flash('You already friendzoned this person','info');
+            return redirect()->route('profile.index',['username'=> $user->username]);
         }
 
         Auth::user()->addFriend($user);
-        return redirect()->route('profile.index',['username'=>$username])->with('info','Friendzone request sent');
+        notify()->flash('Friendzone request sent','success');
+        return redirect()->route('profile.index',['username'=>$username]);
     }
 }

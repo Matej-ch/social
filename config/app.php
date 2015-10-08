@@ -143,6 +143,7 @@ return [
         Social\Providers\AppServiceProvider::class,
         Social\Providers\EventServiceProvider::class,
         Social\Providers\RouteServiceProvider::class,
+        Codecourse\Notify\NotifyServiceProvider::class,
 
     ],
 

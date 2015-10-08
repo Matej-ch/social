@@ -19,6 +19,9 @@
 //TODO add live chat
 //TODO weather forecast
 //TODO test if works
+//TODO tO-dO list
+//TODO improve search
+//TODO Maps Geolocation
 
 /**
 Home
@@ -27,7 +30,8 @@ Route::get('/', ['uses' => '\Social\Http\Controllers\HomeController@index',
                     'as' => 'home',]);
 
 Route::get('/alert', function(){
-    return redirect()->route('home')->with('info','You have signed up');
+    notify()->flash('You have signed up','success',['timer'=>2000]);
+    return redirect()->route('home');
 });
 
 /**

@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
      <title>The next big thing</title>
 </head>
 
@@ -20,6 +21,5 @@
     @include('templates.partials.alert')
     @yield('content')
 </div>
-<script src="js/sweetalert.min.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" style="margin-bottom: 15px;" href="{{route('home')}}"><img src="{{asset('images/logo.jpg')}}" alt="friendface logo" width="120px"/></a>
+            <a class="navbar-brand" href="{{route('home')}}">FRIENDFACE</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

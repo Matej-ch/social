@@ -1,5 +1,13 @@
-@if(Session::has('info'))
-    <div class="alert alert-info" role="alert">
-        {{Session::get('info')}}
-    </div>
+
+<script>
+    @if( notify()->ready() )
+    swal({
+        title: " {{notify()->message()}}",
+        type: "{{notify()->type()}}",
+        @if(notify()->option('timer'))
+            timer: {{ notify()->option('timer') }},
+        @endif
+    });
     @endif
+</script>
+
