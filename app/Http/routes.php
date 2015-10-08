@@ -18,6 +18,7 @@
 // TODO improve interface, so id doesn't look so much like bootstrap
 //TODO add live chat
 //TODO weather forecast
+//TODO test if works
 
 /**
 Home
