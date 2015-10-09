@@ -1,8 +1,8 @@
--## Official Name
-FriendFace
-You can communicate with each other, post and like statuses, use live chat, check weather play games , look at commercials and first of all friendzone people
+- ## Official Name
+- FriendFace
+- You can communicate with each other, post and like statuses, use live chat, check weather play games , look at commercials and first of all friendzone people
 
--## Stuff TODO
+- ## Stuff TODO
 - [x] Add sweetAlert messages + notify
 - [ ] Add captcha
 - [ ] Add relationship

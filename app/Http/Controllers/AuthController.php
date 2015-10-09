@@ -10,6 +10,7 @@ namespace Social\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use ReCaptcha\ReCaptcha;
 use Social\Models\User;
 
 class AuthController extends Controller
@@ -30,6 +31,13 @@ class AuthController extends Controller
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password')),
         ]);
+
+        $recaptcha = new ReCaptcha('6LendQ4TAAAAAI8j3ACStIFQUg0788s7tgAX-4lg');
+        $response = $recaptcha->verify($request->input('g-recaptcha-response'));
+        if(!$response->isSuccess()){
+            $errors = $response->getErrorCodes();
+
+        }
 
         notify()->flash('You are ready to go','success');
         return redirect()->route('home');

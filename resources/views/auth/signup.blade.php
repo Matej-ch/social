@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-lg-6">
             <h3>Sign up</h3>
+            <hr/>
             <form class="form-vertical" role="form" method="post" action="{{ route('auth.signup') }}">
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error':''}}">
@@ -29,7 +30,8 @@
                         <span class="help-block">{{$errors->first('password') }}</span>
                     @endif
                 </div>
-                <div class="form-group"><button type="submit" class="btn btn-primary">Sign up</button></div>
+                <div class="g-recaptcha" data-sitekey="6LendQ4TAAAAANLqJhgj9noxsciKg8odzfS9aFOg"></div>
+                <div class="form-group"><button type="submit" class="btn btn-success">Sign up</button></div>
                 <input type="hidden" name="_token" value="{{Session::token() }}"/>
 
             </form>

@@ -9,6 +9,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
@@ -21,5 +22,6 @@
     @include('templates.partials.alert')
     @yield('content')
 </div>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </body>
 </html>
